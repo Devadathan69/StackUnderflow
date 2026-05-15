@@ -1,73 +1,26 @@
-# React + TypeScript + Vite
+# StackUnderflow - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+StackUnderflow is a modern, responsive Q&A platform inspired by Stack Overflow, designed for developers to share knowledge and solve coding problems. This frontend is built with **React** and **Vite**, providing a fast and interactive user experience.
 
-Currently, two official plugins are available:
+The application features a clean interface where users can browse the latest technical questions, dive into detailed discussions, and contribute by posting their own questions and answers. It communicates with a PostgreSQL-backed Express API to ensure real-time data persistence and a seamless flow of information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting Started
 
-## React Compiler
+To run the frontend locally:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1.  Navigate to the `frontend` directory.
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+4.  Open your browser to `http://localhost:5173`.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Features
+- **Dynamic Question Feed**: View a real-time list of questions asked by the community.
+- **Detailed Discussions**: View full question bodies and their corresponding answers.
+- **Community Contribution**: Simple forms to post new questions and contribute answers to existing ones.
+- **Modern Tech Stack**: Leveraging React hooks and Vite for a performance-oriented developer experience.
